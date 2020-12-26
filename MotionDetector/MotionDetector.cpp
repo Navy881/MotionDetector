@@ -12,6 +12,7 @@
 #include <opencv2/videoio.hpp>
 #include <opencv2/highgui.hpp>
 #include <chrono> 
+#include <thread>
 
 #include "Camera.h"
 
@@ -148,6 +149,9 @@ void motion_detect(
 
 		cv::Mat frame = camera->get_frame().clone();
 
+		if (frame.cols < 1 || frame.rows < 1)
+			continue;
+
 		std::string detection_text = "Unoccupied";
 		cv::Scalar detection_text_color = CV_RGB(0, 255, 0);
 
@@ -238,7 +242,6 @@ void motion_detect(
 		if (c == 27)
 			break;
 
-
 	}
 
 }
@@ -305,7 +308,7 @@ int main()
 
 		else
 			std::cout << '\n' << "ERROR: Videofile not created" << '\n' << std::endl;
-
+	
 	}
 	else {
 		std::cout << '\n' << "ERROR: Camera not found" << '\n' << std::endl;
