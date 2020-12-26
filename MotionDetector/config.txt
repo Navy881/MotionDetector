@@ -1,0 +1,16 @@
+# CV options
+CAMERA_INDEX=0
+MIN_CONTOUR_AREA=100
+BLUR_SIZE=11
+BLUR_POWER=1
+THRESHOLD_LOW=50
+
+# Video & photo options
+OUTPUT_VIDEO_FPS=20
+
+# Dir paths options
+PHOTO_DIR_PATH=
+VIDEO_DIR_PATH=./video
+
+# Telegram bot options
+TELEGRAM_BOT_TOKEN=
